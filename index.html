@@ -24,8 +24,40 @@
     </div>
   </nav>
 </header>
-    <main>
+   <main class="container mt-4">
 
-    </main>
+  <section>
+    <h2 id="titulo">Listado de Películas</h2>
+    <button class="btn btn-primary mb-3" id="cambiarTexto">Cambiar título</button>
+
+    <div class="row" id="cardsContainer"></div>
+  </section>
+
+  <section class="mt-5">
+    <h2>Tabla de Películas</h2>
+
+    <table id="tablaPeliculas" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Idioma</th>
+          <th>Género</th>
+          <th>Rating</th>
+          <th>Pais</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer class="bg-dark text-white text-center p-3 mt-4">
+  <p>Proyecto de Películas <i class="bi bi-film"></i> <i class="bi bi-star"></i></p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
