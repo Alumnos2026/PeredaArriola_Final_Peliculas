@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let contenedor = document.getElementById("cards");
       let tabla = document.querySelector("#tablaPeliculas tbody");
 
-      data.slice(0, 5).forEach(peli => {
+      data.slice(0, 10).forEach(peli => {
 
         let imagen = peli.image ? peli.image.medium : '';
 
