@@ -19,17 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
     titulo.appendChild(nuevo);
   });
 
-  // API
   fetch("https://api.tvmaze.com/shows")
     .then(res => res.json())
     .then(data => {
 
-      let contenedor = document.getElementById("cardsContainer");
+      let contenedor = document.getElementById("cards");
       let tabla = document.querySelector("#tablaPeliculas tbody");
 
-      data.slice(0, 10).forEach(peli => {
+      data.slice(0, 5).forEach(peli => {
 
-        let imagen = peli.image ? peli.image.medium : "https://via.placeholder.com/300";
+        let imagen = peli.image ? peli.image.medium : '';
 
         contenedor.innerHTML += `
           <div class="col-md-6 col-lg-4">
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="card-body">
                 <h5>${peli.name}</h5>
                 <p>${peli.genres.join(", ")}</p>
-                <button class="btn btn-success">Ver más</button>
+               <a href="https://revista24cuadros.com/category/cine/resenas-de-peliculas/" target="_blank" class="btn btn-success">Ver más</a>
               </div>
             </div>
           </div>
@@ -47,9 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
         tabla.innerHTML += `
           <tr>
             <td>${peli.name}</td>
+            <td>${peli.type}</td>
             <td>${peli.language}</td>
-            <td>${peli.genres[0] || "N/A"}</td>
+            <td>${peli.genres[1] || "N/A"}</td>
             <td>${peli.rating.average || "N/A"}</td>
+            <td>${peli.network.country.name || "N/A"}</td>
+            <td>${peli.runtime }</td>
+            <td>${peli.summary }</td>
           </tr>
         `;
       });
